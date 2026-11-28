@@ -248,7 +248,7 @@
 </style>
 </head>
 <body>
-<main class="app">
+<div class="app">
 <div class="demo-banner"><b>离线演示版</b>　下面 11 个案例的结果由 DeepSeek 真实生成后冻结，页面不调用任何接口；换成自己的问题不会现算，会提示你点示例。</div>
 
   <nav>
@@ -256,6 +256,7 @@
     <div class="navmeta" id="navmeta">加载中</div>
   </nav>
 
+  <main>
   <header>
     <h1>你只知道一两条，<br>我们帮你<em>把相关的找全</em></h1>
     <p class="lede">说出你的情况。把淘宝、京东规则里和你有关的条款找出来，分成你已知道的、你可能不知道的、以及对你有利的。</p>
@@ -292,6 +293,7 @@
   </section>
 
   <section id="out" aria-live="polite"></section>
+  </main>
 </div>
 
 
@@ -490,7 +492,7 @@
     } catch(e){
       loading.stop(); setBusy(false);
       $("out").innerHTML = `<div class="err"><b>请求失败</b><br>${esc(e.message)}
-        <div><button class="btn" id="retry">再试一次</button></div></main>`;
+        <div><button class="btn" id="retry">再试一次</button></div></div>`;
       $("retry").onclick = () => $("go").click();
     }
   };
