@@ -14,6 +14,20 @@
      形状：卡片 8px / 交互 6px，全站一致。
      --------------------------------------------------------------- */
   :root{
+  /* 兜底：不支持 oklch 的浏览器退回这些 sRGB 值（值与 oklch 近似） */
+  --bg: #f8f9fa;
+  --sunken: #f2f4f6;
+  --ink: #13161c;
+  --ink-2: #4e5359;
+  --ink-3: #686c72;
+  --rule: #dbdee2;
+  --rule-2: #ebedef;
+  --accent: #28528e;
+  --accent-hi: #15407e;
+  --accent-wash: #e8f1fe;
+  --fav: #076941;
+  --warn: #a8372a;
+  --warn-wash: #fff0e9;
     --bg:        oklch(0.982 0.002 255);
     --paper:     #ffffff;
     --sunken:    oklch(0.966 0.004 255);
@@ -234,7 +248,7 @@
 </style>
 </head>
 <body>
-<div class="app">
+<main class="app">
 <div class="demo-banner"><b>离线演示版</b>　下面 11 个案例的结果由 DeepSeek 真实生成后冻结，页面不调用任何接口；换成自己的问题不会现算，会提示你点示例。</div>
 
   <nav>
@@ -476,7 +490,7 @@
     } catch(e){
       loading.stop(); setBusy(false);
       $("out").innerHTML = `<div class="err"><b>请求失败</b><br>${esc(e.message)}
-        <div><button class="btn" id="retry">再试一次</button></div></div>`;
+        <div><button class="btn" id="retry">再试一次</button></div></main>`;
       $("retry").onclick = () => $("go").click();
     }
   };
